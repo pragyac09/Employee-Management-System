@@ -19,18 +19,17 @@ const App = () => {
     const loggedInUser = JSON.parse(loggedInUserString);
     setUser(loggedInUser.role);
 
-    // ✅ THIS IS THE FIXED PART:
     if (loggedInUser.role === 'employee') {
       // Instead of using old data
       const latest = userData?.employees?.find(
         (emp) => emp.email === loggedInUser.data.email
       );
-      setloggedInUserData(latest); // ✅ Updated employee from latest data
+      setloggedInUserData(latest); 
     } else {
-      setloggedInUserData(loggedInUser.data); // Admin data unchanged
+      setloggedInUserData(loggedInUser.data); 
     }
   }
-}, [userData?.employees]); // ✅ This ensures it runs when userData is updated
+}, [userData?.employees]); 
 
 
   const handleLogin = (email,password)=>{
