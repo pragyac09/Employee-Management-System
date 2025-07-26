@@ -20,7 +20,7 @@ const App = () => {
     setUser(loggedInUser.role);
 
     if (loggedInUser.role === 'employee') {
-      // Instead of using old data
+
       const latest = userData?.employees?.find(
         (emp) => emp.email === loggedInUser.data.email
       );
